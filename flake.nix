@@ -28,5 +28,3 @@ description = "Elegant Vagrant";
         };
     };
 }
-
-# sudo nixos-rebuild switch --flake .#janpstrunn
