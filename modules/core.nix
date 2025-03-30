@@ -4,9 +4,7 @@
   imports =
     [
       ./lang/languages.nix
-      ../profiles/admin.nix # Admin User
-      ("../profiles/"+(userSettings.profile)+"/hardware-configuration.nix") # User Hardware
-      ("../profiles/"+(userSettings.profile)+"/"+(userSettings.username)".nix") # User Config
+      (./. + "../profiles/"+("/"+userSettings.profile)+"hardware-configuration.nix") # User Hardware
       ./system/wm/hyprland.nix
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
