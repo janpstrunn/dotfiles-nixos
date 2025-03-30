@@ -6,4 +6,6 @@
      noto-fonts
      noto-fonts-emoji
   ];
+
+  fonts.fontDir.enable = true;
 }

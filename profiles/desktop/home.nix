@@ -1,6 +1,9 @@
 { config, pkgs, userSettings, ... }:
 
 {
+  imports = [
+    ../../modules/applications/stylix.nix
+  ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
