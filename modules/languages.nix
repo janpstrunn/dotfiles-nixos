@@ -1,15 +1,14 @@
-
 { config, pkgs, ... }:
 
-{ 
+{
  environment.systemPackages = with pkgs; [
-     clang
      cargo
+     clang
      cmake
+     go
      nodejs
      python3Full
-     rustup
      rustc
-     go
+     rustup
   ];
 }

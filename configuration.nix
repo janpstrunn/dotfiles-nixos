@@ -6,15 +6,14 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./apps/cli/essentials.nix
-      ./apps/kitty.nix
-      ./apps/cli/tools.nix
-      ./apps/gui/freetube.nix
-      ./system/languages.nix
-      ./system/fonts.nix
-      ./apps/wm/hyprland.nix
+    [
+      ./modules/fonts.nix # Fonts
+      ./modules/hyprland.nix # Hyprland WM Utilities
+      ./modules/languages.nix # Programming Languages
+      ./modules/xorg.nix # Enable X11
+      ./profiles/core.nix # All Systems
+      ./profiles/desktop/hardware-configuration.nix # User Hardware
+      ./profiles/desktop/janpstrunn.nix # User Specific
     ];
 
   # Bootloader.
