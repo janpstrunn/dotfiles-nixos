@@ -3,6 +3,6 @@
 {
   imports =
     [
-      (./. + "../../profiles/"+("/"+userSettings.profile+"/"+userSettings.username)+".nix") # User Config
+      (./. + "../../profiles/"+("/"+userSettings.profile)+"/home.nix") # User Config
     ];
 }
