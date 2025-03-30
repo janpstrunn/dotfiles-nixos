@@ -40,9 +40,12 @@
       ly
       wl-clipboard-x11
       wlsunset
-      xdg-desktop-portal
-      xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
+      pavucontrol
+      libva-utils
+      gsettings-desktop-schemas
+      wlr-randr
+      pinentry-gnome3
       # Extra Hyprland
       hypridle
       hyprlock
@@ -50,6 +53,7 @@
       hyprpicker
       hyprpolkitagent
       hyprsunset
+      hyprland-protocols
       # Extra Tools
       fuzzel
       grim
@@ -60,4 +64,5 @@
       wf-recorder
       wttrbar
   ];
+
 }

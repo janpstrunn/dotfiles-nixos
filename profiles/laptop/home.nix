@@ -39,9 +39,10 @@
      age
      atomicparsley
      bat
+     blueman
+     brave
      brightnessctl
      btop
-     brave
      cmus
      direnv
      expect

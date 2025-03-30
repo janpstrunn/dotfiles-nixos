@@ -3,12 +3,12 @@
 {
   imports =
     [
-      ./lang/languages.nix
       (./. + "../../profiles/"+("/"+userSettings.profile+"/")+"/hardware-configuration.nix") # User Hardware
       ./system/wm/hyprland.nix
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
       ./system/hostname.nix
+      # ./system/touchpad.nix
       # ./system/kernel.nix
       ./system/locale.nix
       # ./system/opengl.nix
