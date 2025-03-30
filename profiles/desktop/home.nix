@@ -8,6 +8,8 @@
     ../../modules/lang/nodejs.nix
     ../../modules/lang/python.nix
     ../../modules/lang/rust.nix
+    ../../modules/lang/lsp.nix
+    ../../modules/applications/editor.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
