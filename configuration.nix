@@ -57,6 +57,8 @@
   services.displayManager.ly.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs = {
     hyprland.enable = true;
     hyprland.xwayland.enable = true;
