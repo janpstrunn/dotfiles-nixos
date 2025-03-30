@@ -4,8 +4,9 @@
   services.xserver.enable = true;
 
   environment.systemPackages = with pkgs; [
-    xclip
     libnotify
+    xclip
+    xdotool
     zenity
   ];
 }
