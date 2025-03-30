@@ -13,7 +13,7 @@
       ./modules/xorg.nix # Enable X11
       ./profiles/core.nix # All Systems
       ./profiles/desktop/hardware-configuration.nix # User Hardware
-      ./profiles/desktop/janpstrunn.nix # User Specific
+      ./profiles/desktop/wm.nix # User Specific
     ];
 
   # Bootloader.
