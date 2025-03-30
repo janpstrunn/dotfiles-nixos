@@ -93,6 +93,7 @@
      oh-my-posh
      onefetch
      pass
+     pass-otp
      pwgen
      ranger
      rsync
