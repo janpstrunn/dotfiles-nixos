@@ -21,10 +21,12 @@ description = "Elegant Vagrant";
       };
       # ----- USER SETTINGS ----- #
       # This user is in wheel group
-      username = "janpstrunn";
-      name = "Janpstrunn";
-      email = "janpstrunn@disroot.org";
-      homeDir = "/home/${username}";
+      userSettings = {
+        username = "janpstrunn";
+        name = "Janpstrunn";
+        email = "janpstrunn@disroot.org";
+        homeDir = "/home/${userSettings.username}";
+      };
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages."${system}";
@@ -33,6 +35,9 @@ description = "Elegant Vagrant";
           janpstrunn = lib.nixosSystem {
               system = "${system}";
               modules = [ ./configuration.nix ];
+              specialArgs = {
+                 inherit userSettings;
+              };
             };
         };
       homeConfigurations = {
@@ -40,7 +45,7 @@ description = "Elegant Vagrant";
               inherit pkgs;
               modules = [ ./home.nix ];
               extraSpecialArgs = {
-                 inherit username;
+                 inherit userSettings;
               };
             };
         };
