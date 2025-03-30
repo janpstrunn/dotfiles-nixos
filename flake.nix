@@ -36,7 +36,7 @@ description = "Elegant Vagrant";
               system = "${system}";
               modules = [ ./configuration.nix ];
               specialArgs = {
-                 inherit username
+                 inherit username;
               };
             };
         };
