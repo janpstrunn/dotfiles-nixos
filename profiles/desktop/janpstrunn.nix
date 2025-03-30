@@ -21,7 +21,6 @@
   #  /etc/profiles/per-user/janpstrunn/etc/profile.d/hm-session-vars.sh
   };
 
-  programs.home-manager.enable = true;
   home.packages = with pkgs; [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
