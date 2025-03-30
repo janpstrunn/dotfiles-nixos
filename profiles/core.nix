@@ -20,6 +20,7 @@
      wget
      zip
      zsh
+     lm_sensors
   ];
 }
 

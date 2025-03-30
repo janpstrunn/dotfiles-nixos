@@ -16,7 +16,9 @@
       age
       atomicparsley
       bat
+      brightnessctl
       btop
+      brave
       cmus
       direnv
       expect
