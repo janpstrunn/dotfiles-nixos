@@ -47,7 +47,7 @@
   };
 
   programs.home-manager.enable = true;
-  home.packages = [
+  home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -60,49 +60,49 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-     pkgs.age
-     pkgs.atomicparsley
-     pkgs.bat
-     pkgs.brightnessctl
-     pkgs.btop
-     pkgs.brave
-     pkgs.cmus
-     pkgs.direnv
-     pkgs.expect
-     pkgs.eza
-     pkgs.fastfetch
-     pkgs.fd
-     pkgs.ffmpeg
-     pkgs.freetube
-     pkgs.gh
-     pkgs.gitleaks
-     pkgs.gocryptfs
-     pkgs.gvfs
-     pkgs.imagemagick
-     pkgs.jq
-     pkgs.just
-     pkgs.kitty
-     pkgs.ly
-     pkgs.mpv
-     pkgs.mtpfs
-     pkgs.navi
-     pkgs.neovim
-     pkgs.oath-toolkit
-     pkgs.oh-my-posh
-     pkgs.onefetch
-     pkgs.pass
-     pkgs.pwgen
-     pkgs.ranger
-     pkgs.rsync
-     pkgs.srm
-     pkgs.stow
-     pkgs.tldr
-     pkgs.tmux
-     pkgs.tmuxp
-     pkgs.tree
-     pkgs.ueberzugpp
-     pkgs.ydotool
-     pkgs.yt-dlp
-     pkgs.zoxide
+     age
+     atomicparsley
+     bat
+     brightnessctl
+     btop
+     brave
+     cmus
+     direnv
+     expect
+     eza
+     fastfetch
+     fd
+     ffmpeg
+     freetube
+     gh
+     gitleaks
+     gocryptfs
+     gvfs
+     imagemagick
+     jq
+     just
+     kitty
+     ly
+     mpv
+     mtpfs
+     navi
+     neovim
+     oath-toolkit
+     oh-my-posh
+     onefetch
+     pass
+     pwgen
+     ranger
+     rsync
+     srm
+     stow
+     tldr
+     tmux
+     tmuxp
+     tree
+     ueberzugpp
+     ydotool
+     yt-dlp
+     zoxide
   ];
 }
