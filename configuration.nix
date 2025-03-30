@@ -59,14 +59,15 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+
   programs = {
     hyprland.enable = true;
     hyprland.xwayland.enable = true;
     firefox.enable = true;
     zsh.enable = true;
   };
-
-  users.defaultUserShell = pkgs.zsh;
 
   # Configure keymap in X11
   services.xserver.xkb = {
