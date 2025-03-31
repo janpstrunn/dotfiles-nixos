@@ -14,14 +14,10 @@
       };
       # portalPackage = pkgs-hyprland.xdg-desktop-portal-hyprland;
     };
-    firefox.enable = true;
-    zsh.enable = true;
   };
 
   services.xserver.excludePackages = [ pkgs.xterm ];
-  # services.xserver.displayManager.ly = true;
-  services.displayManager.ly.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.${userSettings.displayManager}.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

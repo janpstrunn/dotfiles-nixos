@@ -4,22 +4,34 @@
   imports =
     [
       (./. + "../../profiles/"+("/"+userSettings.profile+"/")+"/hardware-configuration.nix") # User Hardware
-      ./system/wm/hyprland.nix
+      (./. + "./system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
+      # ./system/flatpak.nix
+      # ./system/gamemode.nix
       ./system/hostname.nix
-      # ./system/touchpad.nix
       # ./system/kernel.nix
       ./system/locale.nix
       # ./system/opengl.nix
+      # ./system/podman.nix
       # ./system/power.nix
       # ./system/printer.nix
       # ./system/proxy.nix
-      ./system/security/gpg.nix
-      ./system/security/unfree.nix
+      # ./system/steam.nix
       ./system/systemd.nix
       # ./system/time.nix
+      # ./system/touchpad.nix
       # ./system/virtualization.nix
+      # ./system/automount.nix
+      # ./system/blocklist.nix
+      # ./system/doas.nix
+      # ./system/firejail-profiles
+      # ./system/firejail.nix
+      # ./system/firewall.nix
+      ./system/gpg.nix
+      # ./system/openvpn.nix
+      # ./system/sshd.nix
+      ./system/unfree.nix
     ];
 
   # Flakes
@@ -49,13 +61,13 @@
       curl
       fzf
       git
-      killall
       gnutar
-      openssl
+      killall
       lazygit
       less
       man
       moreutils
+      openssl
       polkit
       pulseaudio
       ripgrep
