@@ -33,3 +33,9 @@ pull:
 # Garbage Collect (7d)
 garbage:
   nix-collect-garbage --delete-older-than 7d
+
+# Install home-manager
+hm-install:
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
