@@ -55,6 +55,24 @@
   #  /etc/profiles/per-user/janpstrunn/etc/profile.d/hm-session-vars.sh
   };
 
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      music = "${userSettings.homeDir}/media/music";
+      videos = "${userSettings.homeDir}/media/videos";
+      pictures = "${userSettings.homeDir}/media/pictures";
+      templates = "${userSettings.homeDir}/templates";
+      download = "${userSettings.homeDir}/downloads";
+      documents = "${userSettings.homeDir}/documents";
+      desktop = null;
+      publicShare = null;
+    };
+  };
+
+  xdg.mime.enable = true;
+  xdg.mimeApps.enable = true;
+
   home.packages = with pkgs; [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 

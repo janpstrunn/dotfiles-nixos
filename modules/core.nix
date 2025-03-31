@@ -4,7 +4,7 @@
   imports =
     [
       (./. + "../../profiles/"+("/"+userSettings.profile+"/")+"/hardware-configuration.nix") # User Hardware
-      (./. + "./system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
+      (./. + "/system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
       # ./system/flatpak.nix
@@ -22,16 +22,16 @@
       # ./system/time.nix
       # ./system/touchpad.nix
       # ./system/virtualization.nix
-      # ./system/automount.nix
-      # ./system/blocklist.nix
-      # ./system/doas.nix
-      # ./system/firejail-profiles
-      # ./system/firejail.nix
-      # ./system/firewall.nix
-      ./system/gpg.nix
-      # ./system/openvpn.nix
-      # ./system/sshd.nix
-      ./system/unfree.nix
+      # ./system/security/automount.nix
+      # ./system/security/blocklist.nix
+      # ./system/security/doas.nix
+      # ./system/security/firejail-profiles
+      # ./system/security/firejail.nix
+      # ./system/security/firewall.nix
+      ./system/security/gpg.nix
+      # ./system/security/openvpn.nix
+      # ./system/security/sshd.nix
+      ./system/security/unfree.nix
     ];
 
   # Flakes
@@ -55,6 +55,8 @@
     uid = 1000;
   };
 
+  programs.zsh.enable = true;
+
   environment.systemPackages = with pkgs; [
       # All Users
       cryptsetup
@@ -76,6 +78,7 @@
       wget
       zip
       zsh
+      foot
     ];
 
   environment.shells = with pkgs; [ zsh ];
