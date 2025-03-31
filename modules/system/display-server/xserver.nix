@@ -19,9 +19,6 @@
     ];
   };
 
-  services.udiskie.enable = true;
-  services.udiskie.tray = "always";
-
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     adwaita-qt

@@ -14,6 +14,9 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
+  services.udiskie.enable = true;
+  services.udiskie.tray = "always";
+
   programs.home-manager.enable = true;
 
   home.file = {
