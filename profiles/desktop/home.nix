@@ -14,6 +14,14 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.gnome.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24; # Adjust the size as needed
+  };
+
   services.udiskie.enable = true;
   services.udiskie.tray = "always";
 

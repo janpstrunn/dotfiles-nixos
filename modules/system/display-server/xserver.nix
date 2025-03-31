@@ -19,6 +19,9 @@
     ];
   };
 
+  environment.sessionVariables.XCURSOR_THEME = "Adwaita";
+  environment.sessionVariables.XCURSOR_SIZE = "20";
+
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     adwaita-qt
