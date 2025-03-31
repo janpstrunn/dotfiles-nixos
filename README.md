@@ -16,7 +16,7 @@
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals (keep it modern)
-  </details>
+    </details>
 
 <details>
   <summary>Goals</summary>
@@ -25,6 +25,13 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
+    </details>
+
+<details>
+  <summary>Notes</summary>
+
+I do not use Home Manager to manage all my dotfiles, instead I have a separate repository only for the software configurations. I do manage them using `stow` which is much simpler than Home Manager and give me more flexibility.
+
   </details>
 
 ## Footages
