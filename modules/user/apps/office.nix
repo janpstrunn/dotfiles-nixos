@@ -2,11 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    libreoffice-stable
+    libreoffice
     foliate
     gnome-disk-utility
-    gnome-seahorse
     gnome-font-viewer
-    gnome-gnome-maps
+    seahorse
+    gnome-maps
   ];
 }
