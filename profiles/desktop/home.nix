@@ -28,10 +28,15 @@
   };
 
   gtk = {
+    enable = true;
     iconTheme = {
-      package = userSettings.cursorTheme;
+      name = userSettings.iconName;
+      package = userSettings.iconTheme;
     };
-    theme = userSettings.gtkTheme;
+    theme = {
+      name = userSettings.themeName;
+      package = userSettings.gtkTheme;
+    };
   };
 
   services.udiskie.enable = true;

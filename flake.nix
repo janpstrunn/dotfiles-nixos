@@ -28,7 +28,9 @@
         profile = "desktop";
         homeDir = "/home/${userSettings.username}";
         editor = "emacsclient -a -c 'emacs'";
-        cusorTheme = pkgs.rose-pine-icon-theme;
+        themeName = "rose-pine";
+        iconName = "oomox-rose-pine";
+        iconTheme = pkgs.rose-pine-icon-theme;
         gtkTheme = pkgs.rose-pine-gtk-theme;
         displayManager = "ly";
         wm = "hyprland";
