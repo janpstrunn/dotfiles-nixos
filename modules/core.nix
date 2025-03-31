@@ -36,7 +36,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "input" "dialout" "video" "render" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
     packages = with pkgs; [
       figlet
     ];
