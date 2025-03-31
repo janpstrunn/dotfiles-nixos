@@ -7,7 +7,7 @@
 <img src=https://perfectmediaserver.com/images/logos/nixos-logo.png>
 </div>
 
-> ![NOTE]
+> [!NOTE]
 > This repository only contains Nix configurations. The software configurations can be found at [janpstrunn/dotfiles](https://github.com/janpstrunn/dotfiles)
 
 <details>
