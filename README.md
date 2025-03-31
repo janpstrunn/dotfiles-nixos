@@ -7,13 +7,16 @@
 <img src=https://perfectmediaserver.com/images/logos/nixos-logo.png>
 </div>
 
+> ![NOTE]
+> This repository only contains Nix configurations. The software configurations can be found at [janpstrunn/dotfiles](https://github.com/janpstrunn/dotfiles)
+
 <details>
   <summary>Philosophies</summary>
 
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals (keep it modern)
-    </details>
+  </details>
 
 <details>
   <summary>Goals</summary>
@@ -22,13 +25,6 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
-    </details>
-
-<details>
-  <summary>Notes</summary>
-
-This repository only contains Nix configurations. The software configurations can be fount at [janpstrunn/dotfiles](https://github.com/janpstrunn/dotfiles)
-
   </details>
 
 ## Footages
