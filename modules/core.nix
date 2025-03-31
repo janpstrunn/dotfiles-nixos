@@ -49,7 +49,9 @@
       curl
       fzf
       git
+      killall
       gnutar
+      openssl
       lazygit
       less
       man

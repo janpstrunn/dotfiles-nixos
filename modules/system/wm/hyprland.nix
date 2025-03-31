@@ -64,5 +64,4 @@
       wf-recorder
       wttrbar
   ];
-
 }
