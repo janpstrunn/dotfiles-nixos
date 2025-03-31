@@ -11,6 +11,7 @@
       # ./system/gamemode.nix
       ./system/hostname.nix
       # ./system/kernel.nix
+      ./system/fonts.nix
       ./system/locale.nix
       # ./system/opengl.nix
       # ./system/podman.nix
