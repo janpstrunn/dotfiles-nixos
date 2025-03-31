@@ -15,7 +15,7 @@
       ./system/wm/gnome.nix
       ./system/locale.nix
       # ./system/opengl.nix
-      # ./system/podman.nix
+      ./system/podman.nix
       # ./system/power.nix
       # ./system/printer.nix
       # ./system/proxy.nix
