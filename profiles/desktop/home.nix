@@ -15,6 +15,7 @@
     ../../modules/user/apps/office.nix
     ../../modules/user/apps/browser.nix
     ../../modules/user/apps/media.nix
+    ../../modules/user/apps/email.nix
   ];
 
   home.username = userSettings.username;
