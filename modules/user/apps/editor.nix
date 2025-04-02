@@ -8,5 +8,8 @@
     hunspellDicts.en_US
     hunspellDicts.pt_BR
     neovim
+    poppler_utils
+    ffmpegthumbnailer
+    mediainfo
   ];
 }

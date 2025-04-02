@@ -14,6 +14,7 @@
     ../../modules/user/apps/editor.nix
     ../../modules/user/apps/office.nix
     ../../modules/user/apps/browser.nix
+    ../../modules/user/apps/media.nix
   ];
 
   home.username = userSettings.username;
@@ -111,7 +112,6 @@
      mpv
      mtpfs
      navi
-     neovim
      oath-toolkit
      oh-my-posh
      onefetch

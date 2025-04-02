@@ -8,5 +8,6 @@
     gnome-font-viewer
     seahorse
     gnome-maps
+    pandoc
   ];
 }
