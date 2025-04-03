@@ -15,5 +15,6 @@
     bash-language-server
     yaml-language-server
     sqls
+    harper
   ];
 }
