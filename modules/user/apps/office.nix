@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     libreoffice
-    foliate
+    evince
     gnome-disk-utility
     gnome-font-viewer
     seahorse

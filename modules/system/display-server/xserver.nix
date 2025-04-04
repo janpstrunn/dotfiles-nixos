@@ -31,6 +31,7 @@
     xclip
     xdotool
     zenity
+    dconf
   ];
 }
 
