@@ -131,6 +131,7 @@
      ydotool
      yt-dlp
      zoxide
+     libargon2
   ];
 
   home.stateVersion = "24.11";
