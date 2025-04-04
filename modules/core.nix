@@ -43,6 +43,7 @@
     isNormalUser = true;
     description = "Admnistrator";
     extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       nmap
     ];
@@ -51,13 +52,12 @@
     isNormalUser = true;
     description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       figlet
     ];
     uid = 1000;
   };
-
-  programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
       # All Users
@@ -83,8 +83,9 @@
       foot
     ];
 
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ bash zsh ];
+  users.defaultUserShell = pkgs.bash;
+  programs.zsh.enable = true;
 
   # configuration.nix(5)
   # nixos-help
