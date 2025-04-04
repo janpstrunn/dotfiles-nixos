@@ -116,8 +116,7 @@
      oath-toolkit
      oh-my-posh
      onefetch
-     pass
-     passExtensions.pass-otp
+    (pkgs.pass.withExtensions (exts: [ pkgs.passExtensions.pass-otp ]))
      pwgen
      ranger
      rsync
