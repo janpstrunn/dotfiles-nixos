@@ -7,6 +7,8 @@
       (./. + "/system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
+      ./system/networking.nix
+      ./system/nextdns.nix
       # ./system/flatpak.nix
       # ./system/gamemode.nix
       ./system/hostname.nix
