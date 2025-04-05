@@ -39,3 +39,7 @@ hm-install:
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
   nix-channel --update
   nix-shell '<home-manager>' -A install
+
+# Secure NextDNS Profile File
+nextdns-harden:
+  git update-index --assume-unchanged ./modules/system/nextdns-profile.nix
