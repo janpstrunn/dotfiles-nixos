@@ -1,0 +1,3 @@
+{
+  nextdns_profile = "abcdef"
+}
