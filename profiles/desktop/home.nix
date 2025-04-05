@@ -116,12 +116,17 @@
      oath-toolkit
      oh-my-posh
      onefetch
-    (pkgs.pass.withExtensions (exts: [ pkgs.passExtensions.pass-otp ]))
+     tomb
+     (pkgs.pass.withExtensions (exts: [
+       pkgs.passExtensions.pass-otp
+       pkgs.passExtensions.pass-tomb
+     ]))
      pwgen
      ranger
      rsync
      srm
      stow
+     borgbackup
      tldr
      tmux
      tmuxp
