@@ -1,3 +1,3 @@
 {
-  nextdns_profile = "abcdef"
+  nextdns_profile = "abcdef";
 }
