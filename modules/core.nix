@@ -9,7 +9,7 @@
       ./system/boot-loader.nix
       ./system/networking.nix
       ./system/nextdns.nix
-      # ./system/flatpak.nix
+      ./system/flatpak.nix
       # ./system/gamemode.nix
       ./system/hostname.nix
       # ./system/kernel.nix
