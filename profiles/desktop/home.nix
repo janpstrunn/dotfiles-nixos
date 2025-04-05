@@ -80,11 +80,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "librewolf.desktop";
+      "text/html" = "app.zen_browser.zen.desktop";
       "x-scheme-handler/http" = "librewolf.desktop";
-      "x-scheme-handler/https" = "librewolf.desktop";
-      "x-scheme-handler/about" = "librewolf.desktop";
-      "x-scheme-handler/unknown" = "librewolf.desktop";
+      "x-scheme-handler/https" = "app.zen_browser.zen.desktop";
+      "x-scheme-handler/about" = "app.zen_browser.zen.desktop";
+      "x-scheme-handler/unknown" = "app.zen_browser.zen.desktop";
     };
   };
 
