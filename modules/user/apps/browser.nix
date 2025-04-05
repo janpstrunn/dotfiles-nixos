@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    brave
-    librewolf-bin
+    lynx
+    # brave
   ];
 }
