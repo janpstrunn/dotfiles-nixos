@@ -16,6 +16,7 @@
     ../../modules/user/apps/browser.nix
     ../../modules/user/apps/media.nix
     ../../modules/user/apps/email.nix
+    ../../modules/user/apps/password-manager.nix
   ];
 
   home.username = userSettings.username;
@@ -124,11 +125,6 @@
      oath-toolkit
      oh-my-posh
      onefetch
-     tomb
-     (pkgs.pass.withExtensions (exts: [
-       pkgs.passExtensions.pass-otp
-       pkgs.passExtensions.pass-tomb
-     ]))
      pwgen
      ranger
      rsync
