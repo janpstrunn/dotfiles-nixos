@@ -17,6 +17,7 @@
     ../../modules/user/apps/media.nix
     ../../modules/user/apps/email.nix
     ../../modules/user/apps/password-manager.nix
+    ../../modules/user/apps/drive.nix
   ];
 
   home.username = userSettings.username;

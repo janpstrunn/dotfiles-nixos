@@ -9,5 +9,7 @@
     seahorse
     gnome-maps
     pandoc
+    taskwarrior3
+    taskwarrior-tui
   ];
 }
