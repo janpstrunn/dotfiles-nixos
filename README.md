@@ -16,7 +16,7 @@
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals (keep it modern)
-      </details>
+  </details>
 
 <details>
   <summary>Goals</summary>
@@ -25,7 +25,7 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
-      </details>
+  </details>
 
 <details>
   <summary>Notes</summary>
@@ -38,7 +38,7 @@ I do not use Home Manager to manage all my dotfiles, instead I have a separate r
 
 ### Overview
 
-![My Dotfiles](https://git.disroot.org/janpstrunn/images/raw/branch/main/2025-04-06-nixos.avif)
+![My Dotfiles](https://git.disroot.org/janpstrunn/images/raw/branch/main/2025-04-06-nixos.jpg)
 
 ### Tools
 
