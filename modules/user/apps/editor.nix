@@ -13,6 +13,4 @@
     mediainfo
     vips
   ];
-
-   services.emacs.enable = true;
 }
