@@ -11,5 +11,6 @@
     pandoc
     taskwarrior3
     newsboat
+    zotero
   ];
 }
