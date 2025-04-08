@@ -7,35 +7,35 @@
       (./. + "/system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
-      ./system/networking.nix
-      ./system/nextdns.nix
       ./system/flatpak.nix
+      ./system/fonts.nix
       # ./system/gamemode.nix
       ./system/hostname.nix
       # ./system/kernel.nix
-      ./system/fonts.nix
-      ./system/wm/gnome.nix
       ./system/locale.nix
+      ./system/networking.nix
+      ./system/nextdns.nix
       # ./system/opengl.nix
       ./system/podman.nix
       # ./system/power.nix
       # ./system/printer.nix
       # ./system/proxy.nix
-      # ./system/steam.nix
-      ./system/systemd.nix
-      # ./system/time.nix
-      # ./system/touchpad.nix
-      # ./system/virtualization.nix
       # ./system/security/automount.nix
       # ./system/security/blocklist.nix
       # ./system/security/doas.nix
-      # ./system/security/firejail-profiles
       # ./system/security/firejail.nix
+      # ./system/security/firejail-profiles
       # ./system/security/firewall.nix
       ./system/security/gpg.nix
       # ./system/security/openvpn.nix
       # ./system/security/sshd.nix
       ./system/security/unfree.nix
+      # ./system/steam.nix
+      ./system/systemd.nix
+      # ./system/time.nix
+      # ./system/touchpad.nix
+      # ./system/virtualization.nix
+      # ./system/wm/gnome.nix
     ];
 
   # Flakes
