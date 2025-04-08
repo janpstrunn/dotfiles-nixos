@@ -122,7 +122,6 @@
      ly
      mpv
      mtpfs
-     navi
      oath-toolkit
      oh-my-posh
      onefetch
