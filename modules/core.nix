@@ -28,7 +28,6 @@
       # ./system/security/firewall.nix
       ./system/security/gpg.nix
       # ./system/security/openvpn.nix
-      # ./system/security/sshd.nix
       ./system/security/unfree.nix
       # ./system/steam.nix
       ./system/systemd.nix
@@ -36,6 +35,9 @@
       # ./system/touchpad.nix
       # ./system/virtualization.nix
       # ./system/wm/gnome.nix
+      ( import ./system/security/sshd.nix {
+        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsfyRCbbDC4ilFzrOJc63uVBXYcTdpImTxsCp7+ymt2 janpstrunn@beelzebub"];
+        inherit userSettings; })
     ];
 
   # Flakes
