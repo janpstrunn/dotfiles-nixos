@@ -10,5 +10,6 @@
     gnome-maps
     pandoc
     taskwarrior3
+    newsboat
   ];
 }
