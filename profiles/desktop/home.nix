@@ -105,7 +105,7 @@
      brave
      cmus
      direnv
-     expect
+     # expect
      eza
      fastfetch
      fd
@@ -117,14 +117,17 @@
      gvfs
      imagemagick
      jq
+     ncdu
      just
      kitty
      ly
      mpv
      mtpfs
      oath-toolkit
+     bash-completion
      oh-my-posh
      onefetch
+     # odt2txt
      pwgen
      ranger
      rsync
@@ -133,6 +136,7 @@
      borgbackup
      tldr
      tmux
+     mupdf
      tmuxp
      tree
      ueberzugpp

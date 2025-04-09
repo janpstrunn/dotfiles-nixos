@@ -12,5 +12,6 @@
     taskwarrior3
     newsboat
     zotero
+    ddgr
   ];
 }
