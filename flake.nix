@@ -27,7 +27,7 @@
         email = "janpstrunn@disroot.org";
         profile = "desktop";
         homeDir = "/home/${userSettings.username}";
-        editor = "emacsclient -a -c 'emacs'";
+        editor = "emacsclient -c";
         themeName = "rose-pine";
         iconName = "oomox-rose-pine";
         iconTheme = pkgs.rose-pine-icon-theme;
