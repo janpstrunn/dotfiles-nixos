@@ -3,6 +3,7 @@
 {
   imports =
     [
+      # Required
       (./. + "../../profiles/"+("/"+userSettings.profile+"/")+"/hardware-configuration.nix") # User Hardware
       (./. + "/system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
       # ./system/bluetooth.nix
@@ -22,14 +23,14 @@
       # ./system/proxy.nix
       # ./system/security/automount.nix
       # ./system/security/blocklist.nix
-      # ./system/security/doas.nix
+      ./system/security/doas.nix
       # ./system/security/firejail.nix
       # ./system/security/firejail-profiles
-      # ./system/security/firewall.nix
+      ./system/security/firewall.nix
       ./system/security/gpg.nix
       # ./system/security/openvpn.nix
       ./system/security/unfree.nix
-      ./system/security/sudo.nix
+      # ./system/security/sudo.nix
       # ./system/steam.nix
       ./system/systemd.nix
       # ./system/time.nix
@@ -85,7 +86,6 @@
       wget
       zip
       zsh
-      foot
     ];
 
   environment.shells = with pkgs; [ bash zsh ];

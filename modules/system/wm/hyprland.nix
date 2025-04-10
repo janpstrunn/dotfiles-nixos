@@ -3,6 +3,7 @@
 {
   imports = [
     ../display-server/wayland.nix
+    ../display-server/display-manager.nix
   ];
 
   programs = {
@@ -17,7 +18,6 @@
   };
 
   services.xserver.excludePackages = [ pkgs.xterm ];
-  services.displayManager.${userSettings.displayManager}.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
