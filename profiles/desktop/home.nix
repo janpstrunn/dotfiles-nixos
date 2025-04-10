@@ -8,6 +8,7 @@
     ../../modules/user/lang/go.nix
     ../../modules/user/lang/nodejs.nix
     ../../modules/user/lang/python.nix
+    ../../modules/user/lang/ruby.nix
     ../../modules/user/lang/rust.nix
     ../../modules/user/lang/lsp.nix
     # Applications

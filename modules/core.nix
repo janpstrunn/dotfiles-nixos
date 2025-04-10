@@ -29,6 +29,7 @@
       ./system/security/gpg.nix
       # ./system/security/openvpn.nix
       ./system/security/unfree.nix
+      ./system/security/sudo.nix
       # ./system/steam.nix
       ./system/systemd.nix
       # ./system/time.nix
