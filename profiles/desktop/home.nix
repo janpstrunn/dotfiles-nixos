@@ -61,7 +61,6 @@
   home.sessionVariables = {
     EDITOR = userSettings.editor;
     TERMCMD = userSettings.term;
-    ~/.env
   };
 
   xdg = {
