@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
      age
+     lsof
      atomicparsley
      bash-completion
      bat
