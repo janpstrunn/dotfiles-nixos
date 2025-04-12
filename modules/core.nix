@@ -38,7 +38,7 @@
       # ./system/virtualization.nix
       # ./system/wm/gnome.nix
       ( import ./system/security/sshd.nix {
-        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsfyRCbbDC4ilFzrOJc63uVBXYcTdpImTxsCp7+ymt2 janpstrunn@beelzebub"];
+        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX7m33igDwueGdRAvoxEOTVfB5PJQYEOINBkKc76gXE janpstrunn@beelzebub"];
         inherit userSettings; })
     ];
 
@@ -86,6 +86,7 @@
       wget
       zip
       zsh
+      gparted
     ];
 
   environment.shells = with pkgs; [ bash zsh ];
