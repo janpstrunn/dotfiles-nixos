@@ -11,6 +11,7 @@
     poppler_utils
     ffmpegthumbnailer
     mediainfo
+    aspell
     vips
   ];
 }
