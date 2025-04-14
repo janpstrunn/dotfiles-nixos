@@ -4,7 +4,6 @@
 <img src=https://img.shields.io/github/repo-size/janpstrunn/dotfiles-nixos?color=7c5cff&label=SIZE&logo=googlecloudstorage&style=for-the-badge&logoColor=D9E0EE&labelColor=292324>
 <img src=https://img.shields.io/badge/Keep%20It%20Simple-Stupid-7c5cff?logo=archlinux&style=for-the-badge&logoColor=D9E0EE&labelColor=292324>
 <img src=https://img.shields.io/github/license/janpstrunn/dotfiles-nixos?color=7c5cff&label=LICENSE&logo=github&style=for-the-badge&logoColor=D9E0EE&labelColor=292324>
-<img src=https://perfectmediaserver.com/images/logos/nixos-logo.png>
 </div>
 
 > [!NOTE]
@@ -16,7 +15,7 @@
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals (keep it modern)
-  </details>
+    </details>
 
 <details>
   <summary>Goals</summary>
@@ -25,7 +24,7 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
-  </details>
+    </details>
 
 <details>
   <summary>Notes</summary>
