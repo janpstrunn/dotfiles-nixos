@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   fileSystems."/mnt/rclone" = {
@@ -9,7 +9,7 @@
       "nofail"
       "allow_other"
       "args2env"
-      "config=/home/janpstrunn/.config/rclone/rclone.conf"
+      "config=/home/${userSettings.username}/.config/rclone/rclone.conf"
     ];
   };
 }
