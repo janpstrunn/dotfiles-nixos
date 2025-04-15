@@ -34,7 +34,7 @@
       # ordered-set
       # packaging
       pillow
-      pip
+      # pip
       # platformdirs
       # ply
       # prettytable
