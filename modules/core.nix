@@ -87,6 +87,8 @@
       zip
       zsh
       gparted
+      jmtpfs
+      rclone
     ];
 
   environment.shells = with pkgs; [ bash zsh ];
