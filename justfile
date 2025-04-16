@@ -1,3 +1,6 @@
+alias fs := f-switch
+alias hs := hm-switch
+
 # Default Just
 list:
   just --list
@@ -10,11 +13,11 @@ f-switch:
 f-update:
   nix flake update
 
-# Update home-manager config
+# Rebuild Home Manager Config
 hm-switch:
   home-manager switch --flake .
 
-# View home-manager generations
+# View Home Manager Generations
 hm-gen:
   home-manager generations
 
@@ -24,7 +27,7 @@ update:
   sudo nix-channel --update;
   nix-channel --update;
 
-# Pull
+# Git Pull
 pull:
   git stash;
   git pull;
@@ -34,7 +37,7 @@ pull:
 garbage:
   nix-collect-garbage --delete-older-than 7d
 
-# Install home-manager
+# Install Home Manager
 hm-install:
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
   nix-channel --update
