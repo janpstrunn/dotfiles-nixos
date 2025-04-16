@@ -9,6 +9,7 @@
       # ./system/bluetooth.nix
       ./system/boot-loader.nix
       ./system/flatpak.nix
+      ./system/spell.nix
       ./system/fonts.nix
       # ./system/gamemode.nix
       ./system/hostname.nix
