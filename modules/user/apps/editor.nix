@@ -12,6 +12,8 @@
     ffmpegthumbnailer
     mediainfo
     aspell
+    aspellDicts.pt_BR
+    aspellDicts.en
     vips
   ];
 }
