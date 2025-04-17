@@ -22,7 +22,8 @@
       # ./system/power.nix
       # ./system/printer.nix
       # ./system/proxy.nix
-      # ./system/security/automount.nix
+      ./system/security/automount.nix
+      ./system/disks.nix
       # ./system/security/blocklist.nix
       # ./system/security/doas.nix
       # ./system/security/firejail.nix
