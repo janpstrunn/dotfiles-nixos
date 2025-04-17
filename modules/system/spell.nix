@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
-}
+{
   environment.systemPackages = with pkgs; [
-    aspell
-    aspellDicts.pt_BR
-    aspellDicts.en
-];
+    (aspellWithDicts (dicts: with dicts; [ en pt_BR]))
+  ];
 }
