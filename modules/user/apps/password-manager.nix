@@ -8,5 +8,6 @@
       pkgs.passExtensions.pass-tomb
     ]))
     zbar
+    steghide
   ];
 }
