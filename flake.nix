@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
     let
 
       # ----- SYSTEM SETTINGS ----- #
@@ -39,7 +40,8 @@
 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages."${system}";
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
     in {
       nixosConfigurations = {
@@ -47,9 +49,10 @@
               system = "${system}";
               modules = [ ./modules/core.nix ];
               specialArgs = {
-                 inherit userSettings;
-                 inherit systemSettings;
+                 inherit pkgs-unstable;
                  inherit system;
+                 inherit systemSettings;
+                 inherit userSettings;
               };
             };
         };
@@ -58,9 +61,10 @@
               inherit pkgs;
               modules = [ ./modules/users.nix ];
               extraSpecialArgs = {
-                 inherit userSettings;
-                 inherit systemSettings;
+                 inherit pkgs-unstable;
                  inherit system;
+                 inherit systemSettings;
+                 inherit userSettings;
               };
             };
         };
