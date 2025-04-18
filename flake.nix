@@ -33,9 +33,9 @@
         iconName = "oomox-rose-pine";
         iconTheme = pkgs.rose-pine-icon-theme;
         gtkTheme = pkgs.rose-pine-gtk-theme;
-        displayManager = "ly";
-        wm = "hyprland";
-        term = "kitty";
+        displayManager = "ly"; # any
+        wm = "hyprland"; # hyprland, gnome, plasma
+        term = "foot";
       };
 
       lib = nixpkgs.lib;
