@@ -74,6 +74,7 @@
       fzf
       git
       gnutar
+      jmtpfs
       killall
       lazygit
       less
@@ -88,9 +89,6 @@
       wget
       zip
       zsh
-      gparted
-      jmtpfs
-      rclone
     ];
 
   environment.shells = with pkgs; [ bash zsh ];

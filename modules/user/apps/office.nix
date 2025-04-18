@@ -2,15 +2,14 @@
 
 {
   home.packages = with pkgs; [
-    libreoffice
     evince
-    gnome-font-viewer
-    seahorse
+    # gnome-font-viewer
     gnome-maps
-    pandoc
-    taskwarrior3
+    libreoffice
     newsboat
+    pandoc
+    seahorse
+    # taskwarrior3
     zotero
-    ddgr
   ];
 }

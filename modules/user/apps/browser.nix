@@ -2,8 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    lynx
-    buku
     # brave
+    buku
+    ddgr
+    lynx
   ];
 }

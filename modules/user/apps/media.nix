@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     gimp
     mpv
-    mermaid-cli
+    # mermaid-cli
     freetube
     # obs-studio
   ];
