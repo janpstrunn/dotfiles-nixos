@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services = {
     blueman-applet.enable = true;
     blueman.enable = true;

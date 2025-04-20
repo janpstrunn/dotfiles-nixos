@@ -1,6 +1,8 @@
-{ pkgs, userSettings, ... }:
-
 {
+  pkgs,
+  userSettings,
+  ...
+}: {
   fileSystems."/mnt/rclone" = {
     device = "Filen:";
     fsType = "rclone";

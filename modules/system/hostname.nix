@@ -1,5 +1,7 @@
-{ config, systemSettings, ... }:
-
 {
+  config,
+  systemSettings,
+  ...
+}: {
   networking.hostName = systemSettings.hostname;
 }

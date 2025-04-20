@@ -1,56 +1,59 @@
-{ config, pkgs, userSettings, ... }:
-
 {
-  imports =
-    [
-      # Required
-      (./. + "../../profiles/"+("/"+userSettings.profile+"/")+"/hardware-configuration.nix") # User Hardware
-      (./. + "/system/wm/"+("/"+userSettings.wm+"/")+".nix") # Window Manager
-      # ./system/bluetooth.nix
-      ./system/boot-loader.nix
-      ./system/flatpak.nix
-      ./system/spell.nix
-      ./system/fonts.nix
-      # ./system/gamemode.nix
-      ./system/hostname.nix
-      # ./system/kernel.nix
-      ./system/locale.nix
-      ./system/networking.nix
-      ./system/nextdns.nix
-      # ./system/opengl.nix
-      ./system/podman.nix
-      # ./system/power.nix
-      # ./system/printer.nix
-      # ./system/proxy.nix
-      ./system/security/automount.nix
-      ./system/disks.nix
-      # ./system/security/blocklist.nix
-      # ./system/security/doas.nix
-      # ./system/security/firejail.nix
-      # ./system/security/firejail-profiles
-      ./system/security/firewall.nix
-      ./system/security/gpg.nix
-      # ./system/security/openvpn.nix
-      ./system/security/unfree.nix
-      ./system/security/sudo.nix
-      # ./system/steam.nix
-      ./system/systemd.nix
-      # ./system/time.nix
-      # ./system/touchpad.nix
-      # ./system/virtualization.nix
-      # ./system/wm/gnome.nix
-      ( import ./system/security/sshd.nix {
-        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX7m33igDwueGdRAvoxEOTVfB5PJQYEOINBkKc76gXE janpstrunn@beelzebub"];
-        inherit userSettings; })
-    ];
+  config,
+  pkgs,
+  userSettings,
+  ...
+}: {
+  imports = [
+    # Required
+    (./. + "../../profiles/" + ("/" + userSettings.profile + "/") + "/hardware-configuration.nix") # User Hardware
+    (./. + "/system/wm/" + ("/" + userSettings.wm + "/") + ".nix") # Window Manager
+    # ./system/bluetooth.nix
+    ./system/boot-loader.nix
+    ./system/flatpak.nix
+    ./system/spell.nix
+    ./system/fonts.nix
+    ./system/gamemode.nix
+    ./system/hostname.nix
+    # ./system/kernel.nix
+    ./system/locale.nix
+    ./system/networking.nix
+    ./system/nextdns.nix
+    # ./system/opengl.nix
+    ./system/podman.nix
+    # ./system/power.nix
+    # ./system/printer.nix
+    # ./system/proxy.nix
+    ./system/security/automount.nix
+    ./system/disks.nix
+    # ./system/security/blocklist.nix
+    # ./system/security/doas.nix
+    # ./system/security/firejail.nix
+    # ./system/security/firejail-profiles
+    ./system/security/firewall.nix
+    ./system/security/gpg.nix
+    # ./system/security/openvpn.nix
+    ./system/security/unfree.nix
+    ./system/security/sudo.nix
+    ./system/steam.nix
+    ./system/systemd.nix
+    # ./system/time.nix
+    # ./system/touchpad.nix
+    # ./system/virtualization.nix
+    # ./system/wm/gnome.nix
+    (import ./system/security/sshd.nix {
+      authorizedKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX7m33igDwueGdRAvoxEOTVfB5PJQYEOINBkKc76gXE janpstrunn@beelzebub"];
+      inherit userSettings;
+    })
+  ];
 
   # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   users.users.admin = {
     isNormalUser = true;
     description = "Admnistrator";
-    extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
+    extraGroups = ["networkmanager" "wheel" "input" "dialout" "video" "render"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       nmap
@@ -59,7 +62,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "input" "dialout" "video" "render" ];
+    extraGroups = ["networkmanager" "wheel" "input" "dialout" "video" "render"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       figlet
@@ -68,30 +71,30 @@
   };
 
   environment.systemPackages = with pkgs; [
-      # All Users
-      cryptsetup
-      curl
-      fzf
-      git
-      gnutar
-      jmtpfs
-      killall
-      lazygit
-      less
-      man
-      moreutils
-      openssl
-      polkit
-      pulseaudio
-      ripgrep
-      udiskie
-      unzip
-      wget
-      zip
-      zsh
-    ];
+    # All Users
+    cryptsetup
+    curl
+    fzf
+    git
+    gnutar
+    jmtpfs
+    killall
+    lazygit
+    less
+    man
+    moreutils
+    openssl
+    polkit
+    pulseaudio
+    ripgrep
+    udiskie
+    unzip
+    wget
+    zip
+    zsh
+  ];
 
-  environment.shells = with pkgs; [ bash zsh ];
+  environment.shells = with pkgs; [bash zsh];
   users.defaultUserShell = pkgs.bash;
   programs.zsh.enable = true;
 

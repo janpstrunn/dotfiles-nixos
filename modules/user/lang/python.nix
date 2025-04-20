@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./python/packages.nix
   ];
 
   home.packages = with pkgs; [
-      python3Full
-      imath
-      pystring
+    python3Full
+    imath
+    pystring
   ];
 }

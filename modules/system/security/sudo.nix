@@ -1,33 +1,33 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   security.sudo = {
     enable = true;
-    extraRules = [{
-      commands = [
+    extraRules = [
       {
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-        options = [ "NOPASSWD" ];
+        commands = [
+          {
+            command = "${pkgs.systemd}/bin/systemctl suspend";
+            options = ["NOPASSWD"];
+          }
+          {
+            command = "${pkgs.systemd}/bin/reboot";
+            options = ["NOPASSWD"];
+          }
+          {
+            command = "${pkgs.systemd}/bin/poweroff";
+            options = ["NOPASSWD"];
+          }
+          {
+            command = "${pkgs.tomb} slam";
+            options = ["NOPASSWD"];
+          }
+        ];
+        groups = ["wheel"];
       }
-      {
-        command = "${pkgs.systemd}/bin/reboot";
-        options = [ "NOPASSWD" ];
-      }
-      {
-        command = "${pkgs.systemd}/bin/poweroff";
-        options = [ "NOPASSWD" ];
-      }
-      {
-        command = "${pkgs.tomb} slam";
-        options = [ "NOPASSWD" ];
-      }
-      ];
-      groups = [ "wheel" ];
-    }];
+    ];
     extraConfig = with pkgs; ''
       Defaults:picloud secure_path="${lib.makeBinPath [
-      systemd
+        systemd
       ]}:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
-      '';
+    '';
   };
 }

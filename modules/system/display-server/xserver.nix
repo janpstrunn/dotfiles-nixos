@@ -1,6 +1,10 @@
-{ config, pkgs, userSettings, systemSettings, ... }:
-
 {
+  config,
+  pkgs,
+  userSettings,
+  systemSettings,
+  ...
+}: {
   services.xserver = {
     enable = true;
     xkb = {
@@ -34,5 +38,3 @@
     dconf
   ];
 }
-
-

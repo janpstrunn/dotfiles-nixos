@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ../audio.nix
     ../dbus.nix
@@ -10,7 +8,7 @@
   ];
 
   services.xserver = {
-    excludePackages = [ pkgs.xterm ];
+    excludePackages = [pkgs.xterm];
     libinput = {
       touchpad.disableWhileTyping = true;
     };

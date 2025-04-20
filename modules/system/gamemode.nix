@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
-  environment.systemPackages = [ pkgs.gamemode ];
+{pkgs, ...}: {
+  environment.systemPackages = [pkgs.gamemode];
   programs.gamemode.enable = true;
 }

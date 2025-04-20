@@ -1,6 +1,9 @@
-{ config, pkgs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  userSettings,
+  ...
+}: {
   imports = [
     ../display-server/wayland.nix
     ../display-server/display-manager.nix
@@ -10,5 +13,5 @@
     desktopManager.gnome.enable = true;
   };
 
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
 }

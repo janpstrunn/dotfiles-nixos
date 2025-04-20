@@ -1,14 +1,15 @@
-{ config, pkgs, pkgs-unstable, ... }:
-
 {
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   home.packages =
     (with pkgs; [
       # kitty
       alacritty
     ])
-    ++
-    (with pkgs-unstable; [
+    ++ (with pkgs-unstable; [
       foot
     ]);
 }
-

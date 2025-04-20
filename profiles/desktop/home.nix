@@ -1,6 +1,9 @@
-{ config, pkgs, userSettings, ... }:
-
 {
+  config,
+  pkgs,
+  userSettings,
+  ...
+}: {
   imports = [
     # Programming Languages
     ../../modules/user/lang/android.nix
@@ -24,7 +27,7 @@
   ];
 
   home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
+  home.homeDirectory = "/home/" + userSettings.username;
 
   home.pointerCursor = {
     gtk.enable = true;

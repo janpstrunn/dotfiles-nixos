@@ -1,8 +1,9 @@
-{ config, userSettings, ... }:
-
 {
-  imports =
-    [
-      (./. + "../../profiles/"+("/"+userSettings.profile)+"/home.nix") # User Config
-    ];
+  config,
+  userSettings,
+  ...
+}: {
+  imports = [
+    (./. + "../../profiles/" + ("/" + userSettings.profile) + "/home.nix") # User Config
+  ];
 }
