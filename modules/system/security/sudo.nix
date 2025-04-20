@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  userSettings,
+  ...
+}: {
   security.sudo = {
     enable = true;
     extraRules = [
       {
+        users = [userSettings.username];
         commands = [
           {
             command = "${pkgs.systemd}/bin/systemctl suspend";
