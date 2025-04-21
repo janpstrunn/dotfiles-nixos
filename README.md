@@ -15,7 +15,7 @@
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals (keep it modern)
-    </details>
+  </details>
 
 <details>
   <summary>Goals</summary>
@@ -24,7 +24,7 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
-    </details>
+  </details>
 
 <details>
   <summary>Notes</summary>
@@ -37,7 +37,7 @@ I do not use Home Manager to manage all my dotfiles, instead I have a separate r
 
 <div align="center">
   <img src="https://git.disroot.org/janpstrunn/images/raw/branch/main/dotfiles/2025-04-21-nixos.webp">
-  <p>Footage from NixOS. Featuring: Fastfetch, Neovim, Ranger, Cmatrix, Fuzzel and Waybar</p>
+  <p>Footage from NixOS. Featuring: Fastfetch, Neovim, Ranger, Cmatrix, Fuzzel, Hyprland and Waybar</p>
 </div>
 
 The theme can be found in the official theme repository: [janpstrunn/elegantvagrant](https://github.com/janpstrunn/elegantvagrant)
