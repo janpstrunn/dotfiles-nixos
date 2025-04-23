@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -11,7 +11,7 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
+    # nixpkgs-unstable,
     home-manager,
     ...
   }: let
@@ -45,14 +45,14 @@
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
   in {
     nixosConfigurations = {
       janpstrunn = lib.nixosSystem {
         system = "${system}";
         modules = [./modules/core.nix];
         specialArgs = {
-          inherit pkgs-unstable;
+          # inherit pkgs-unstable;
           inherit system;
           inherit systemSettings;
           inherit userSettings;
@@ -64,7 +64,7 @@
         inherit pkgs;
         modules = [./modules/users.nix];
         extraSpecialArgs = {
-          inherit pkgs-unstable;
+          # inherit pkgs-unstable;
           inherit system;
           inherit systemSettings;
           inherit userSettings;
