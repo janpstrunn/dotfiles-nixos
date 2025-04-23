@@ -29,30 +29,28 @@
     cliphist
     cpio
     dunst
+    gsettings-desktop-schemas
     hyprland
     hyprlang
+    libva-utils
+    lm_sensors
     meson
+    pavucontrol
+    pinentry-gnome3
     playerctl
     waybar
-    lm_sensors
     wl-clipboard
-    ly
     wl-clipboard-x11
-    wlsunset
-    xdg-desktop-portal-hyprland
-    pavucontrol
-    libva-utils
-    gsettings-desktop-schemas
     wlr-randr
-    pinentry-gnome3
+    xdg-desktop-portal-hyprland
     # Extra Hyprland
     hypridle
+    hyprland-protocols
     hyprlock
     hyprpaper
     hyprpicker
     hyprpolkitagent
     hyprsunset
-    hyprland-protocols
     # Extra Tools
     fuzzel
     grim

@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     lua-language-server
-    nil
+    alejandra
     clang-tools
     marksman
     python311Packages.python-lsp-server
