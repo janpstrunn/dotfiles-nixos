@@ -7,7 +7,7 @@
     gimp
     mpv
     # mermaid-cli
-    freetube
+    # freetube
     # obs-studio
   ];
 }
