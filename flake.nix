@@ -6,13 +6,14 @@
     # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
-    self,
     nixpkgs,
     # nixpkgs-unstable,
     home-manager,
+    nix-flatpak,
     ...
   }: let
     # ----- SYSTEM SETTINGS ----- #
@@ -39,7 +40,7 @@
       gtkTheme = pkgs.rose-pine-gtk-theme;
       displayManager = "ly"; # any
       wm = "hyprland"; # hyprland, gnome, plasma
-      term = "foot";
+      term = "alacritty";
     };
 
     lib = nixpkgs.lib;
@@ -50,7 +51,10 @@
     nixosConfigurations = {
       janpstrunn = lib.nixosSystem {
         system = "${system}";
-        modules = [./modules/core.nix];
+        modules = [
+          ./modules/core.nix
+          nix-flatpak.nixosModules.nix-flatpak
+        ];
         specialArgs = {
           # inherit pkgs-unstable;
           inherit system;
@@ -62,7 +66,9 @@
     homeConfigurations = {
       janpstrunn = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [./modules/users.nix];
+        modules = [
+          ./modules/users.nix
+        ];
         extraSpecialArgs = {
           # inherit pkgs-unstable;
           inherit system;

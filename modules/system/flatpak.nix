@@ -1,5 +1,16 @@
 {pkgs, ...}: {
-  services.flatpak.enable = true;
+  services.flatpak = {
+    enable = true;
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://flathub.org/repo/flathub.flatpakrepo";
+      }
+    ];
+    packages = [
+      "io.freetubeapp.FreeTube"
+    ];
+  };
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];
     path = [pkgs.flatpak];
