@@ -7,7 +7,6 @@
       fonts = [
         "JetBrainsMono"
         "Ubuntu"
-        "DejaVu Sans"
         "FiraCode"
       ];
     })
