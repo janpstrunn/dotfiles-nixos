@@ -1,12 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # brave
     buku
-    ddgr
+    # ddgr
     lynx
   ];
 }

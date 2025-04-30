@@ -11,5 +11,6 @@
     ffmpegthumbnailer
     mediainfo
     vips
+    graphviz
   ];
 }
