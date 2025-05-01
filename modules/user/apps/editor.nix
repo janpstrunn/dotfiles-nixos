@@ -1,16 +1,22 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  home.packages = with pkgs; [
+{pkgs, ...}: let
+  emacsPackages = with pkgs; [
     emacs
     emacs-lsp-booster
-    neovim
-    poppler_utils
     ffmpegthumbnailer
-    mediainfo
-    vips
     graphviz
+    mediainfo
+    poppler_utils
+    vips
   ];
+
+  neovimPackages = with pkgs; [
+    neovim
+    neovide
+  ];
+
+  otherPackages = with pkgs; [
+    # joplin
+  ];
+in {
+  home.packages = emacsPackages ++ neovimPackages ++ otherPackages;
 }

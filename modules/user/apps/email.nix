@@ -1,11 +1,7 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    neomutt
-    mutt-wizard
     isync
+    mutt-wizard
+    neomutt
   ];
 }

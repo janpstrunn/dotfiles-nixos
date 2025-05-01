@@ -1,13 +1,9 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    gimp
-    mpv
-    # mermaid-cli
     # freetube
+    gimp
+    # mermaid-cli
+    mpv
     # obs-studio
   ];
 }

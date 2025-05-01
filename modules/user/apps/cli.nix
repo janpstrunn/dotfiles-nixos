@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     age
     atomicparsley
@@ -12,21 +8,32 @@
     brightnessctl
     btop
     cmus
+    cryptsetup
+    curl
     direnv
     # expect
     eza
     fastfetch
     fd
     ffmpeg
+    fzf
     gh
+    git
     gitleaks
+    gnutar
     gocryptfs
     gvfs
     imagemagick
+    jmtpfs
     jq
     just
+    killall
+    lazygit
+    less
     libargon2
     lsof
+    man
+    moreutils
     mpv
     mtpfs
     mupdf
@@ -35,8 +42,12 @@
     # odt2txt
     oh-my-posh
     onefetch
+    openssl
+    polkit
+    pulseaudio
     pwgen
     ranger
+    ripgrep
     rsync
     srm
     stow
@@ -44,9 +55,14 @@
     tmux
     tmuxp
     tree
+    udiskie
     ueberzugpp
+    unzip
+    wget
     ydotool
     yt-dlp
+    zip
     zoxide
+    zsh
   ];
 }

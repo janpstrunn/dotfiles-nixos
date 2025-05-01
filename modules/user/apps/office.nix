@@ -1,12 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     evince
     # gnome-font-viewer
-    gnome-maps
+    # gnome-maps
     libreoffice
     newsboat
     pandoc

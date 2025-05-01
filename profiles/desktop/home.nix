@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   userSettings,
   ...
@@ -24,6 +23,8 @@
     ../../modules/user/apps/office.nix
     ../../modules/user/apps/password-manager.nix
     ../../modules/user/apps/terminal.nix
+    # Files
+    ../../modules/user/files.nix
   ];
 
   home.username = userSettings.username;
@@ -54,13 +55,7 @@
 
   programs.home-manager.enable = true;
 
-  home.file = {
-    # ".screenrc".source = dotfiles/screenrc;
-    ".tmuxprofile".text = ''
-      $DEV
-    '';
-  };
-
+  # TODO: Find an usage for this
   home.sessionVariables = {
     EDITOR = userSettings.editor;
     TERMCMD = userSettings.term;
