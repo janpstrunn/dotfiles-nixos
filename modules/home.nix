@@ -5,7 +5,7 @@
 }: {
   imports = [
     # Files
-    ../../modules/user/files.nix
+    ./user/files.nix
   ];
 
   home.username = userSettings.username;
