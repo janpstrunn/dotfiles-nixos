@@ -16,7 +16,7 @@
     ../../modules/system/steam.nix
     # ../../modules/system/touchpad.nix
     # ../../modules/system/virtualization.nix
-    (import ./system/security/sshd.nix {
+    (import ../../modules/system/security/sshd.nix {
       authorizedKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX7m33igDwueGdRAvoxEOTVfB5PJQYEOINBkKc76gXE janpstrunn@beelzebub"];
       inherit userSettings;
     })
