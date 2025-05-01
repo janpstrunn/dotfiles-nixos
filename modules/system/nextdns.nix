@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   nextdnsConfig = import ./nextdns-profile.nix;
   nextdns_profile = nextdnsConfig.nextdns_profile;
 in {

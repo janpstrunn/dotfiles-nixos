@@ -1,7 +1,3 @@
-{
-  config,
-  userSettings,
-  ...
-}: {
+{userSettings, ...}: {
   services.displayManager.${userSettings.displayManager}.enable = true;
 }

@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   userSettings,
   ...
@@ -10,8 +9,8 @@
     (./. + "/system/wm/" + ("/" + userSettings.wm + "/") + ".nix") # Window Manager
     # ./system/bluetooth.nix
     ./system/boot-loader.nix
+    ./system/disks.nix
     ./system/flatpak.nix
-    ./system/spell.nix
     ./system/fonts.nix
     ./system/gamemode.nix
     ./system/hostname.nix
@@ -25,7 +24,6 @@
     # ./system/printer.nix
     # ./system/proxy.nix
     ./system/security/automount.nix
-    ./system/disks.nix
     # ./system/security/blocklist.nix
     # ./system/security/doas.nix
     # ./system/security/firejail.nix
@@ -33,8 +31,9 @@
     ./system/security/firewall.nix
     ./system/security/gpg.nix
     # ./system/security/openvpn.nix
-    ./system/security/unfree.nix
     ./system/security/sudo.nix
+    ./system/security/unfree.nix
+    ./system/spell.nix
     ./system/steam.nix
     ./system/systemd.nix
     # ./system/time.nix
@@ -78,6 +77,7 @@
     git
     gnutar
     jmtpfs
+    just
     killall
     lazygit
     less

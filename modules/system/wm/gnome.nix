@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  userSettings,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../display-server/wayland.nix
     ../display-server/display-manager.nix
