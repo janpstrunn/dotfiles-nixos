@@ -64,7 +64,7 @@
       janpstrunn = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./modules/users.nix
+          (./. + "/profiles/" + ("/" + userSettings.profile) + "/home.nix")
         ];
         extraSpecialArgs = {
           # inherit pkgs-unstable;
