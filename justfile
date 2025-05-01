@@ -46,3 +46,6 @@ hm-install:
 # Secure NextDNS Profile File
 nextdns-harden:
   git update-index --assume-unchanged ./modules/system/nextdns-profile.nix
+
+flatpak:
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
