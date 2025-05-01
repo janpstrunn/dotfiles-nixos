@@ -7,12 +7,10 @@
     # Required
     (./. + "../../profiles/" + ("/" + userSettings.profile + "/") + "/hardware-configuration.nix") # User Hardware
     (./. + "/system/wm/" + ("/" + userSettings.wm + "/") + ".nix") # Window Manager
-    # ./system/bluetooth.nix
     ./system/boot-loader.nix
     ./system/disks.nix
     ./system/flatpak.nix
     ./system/fonts.nix
-    ./system/gamemode.nix
     ./system/hostname.nix
     # ./system/kernel.nix
     ./system/locale.nix
@@ -20,30 +18,14 @@
     ./system/nextdns.nix
     # ./system/opengl.nix
     ./system/podman.nix
-    # ./system/power.nix
-    # ./system/printer.nix
-    # ./system/proxy.nix
     ./system/security/automount.nix
-    # ./system/security/blocklist.nix
     # ./system/security/doas.nix
-    # ./system/security/firejail.nix
-    # ./system/security/firejail-profiles
     ./system/security/firewall.nix
     ./system/security/gpg.nix
-    # ./system/security/openvpn.nix
     ./system/security/sudo.nix
-    ./system/security/unfree.nix
-    ./system/spell.nix
-    ./system/steam.nix
+    # ./system/security/unfree.nix
     ./system/systemd.nix
     # ./system/time.nix
-    # ./system/touchpad.nix
-    # ./system/virtualization.nix
-    # ./system/wm/gnome.nix
-    (import ./system/security/sshd.nix {
-      authorizedKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAX7m33igDwueGdRAvoxEOTVfB5PJQYEOINBkKc76gXE janpstrunn@beelzebub"];
-      inherit userSettings;
-    })
   ];
 
   # Flakes
