@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  emacsPackages = with pkgs; [
+  emacsPrograms = with pkgs; [
     emacs
     emacs-lsp-booster
     ffmpegthumbnailer
@@ -18,5 +18,5 @@
     # joplin
   ];
 in {
-  home.packages = emacsPackages ++ neovimPackages ++ otherPackages;
+  home.packages = emacsPrograms ++ neovimPackages ++ otherPackages;
 }
