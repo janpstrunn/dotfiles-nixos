@@ -6,12 +6,14 @@
     # nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
     nixpkgs,
     # nixpkgs-unstable,
     home-manager,
+    nix-flatpak,
     ...
   }: let
     # ----- SYSTEM SETTINGS ----- #
@@ -51,6 +53,7 @@
         system = "${system}";
         modules = [
           (./. + "/profiles/" + ("/" + userSettings.profile) + "/configuration.nix")
+          nix-flatpak.nixosModules.nix-flatpak
         ];
         specialArgs = {
           # inherit pkgs-unstable;
