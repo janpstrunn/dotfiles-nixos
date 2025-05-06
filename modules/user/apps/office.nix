@@ -3,11 +3,11 @@
     evince
     # gnome-font-viewer
     # gnome-maps
-    libreoffice
+    # libreoffice
     newsboat
     pandoc
     seahorse
     # taskwarrior3
-    zotero
+    # zotero
   ];
 }
