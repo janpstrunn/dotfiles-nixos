@@ -7,7 +7,6 @@
     newsboat
     pandoc
     seahorse
-    # taskwarrior3
     # zotero
   ];
 }
