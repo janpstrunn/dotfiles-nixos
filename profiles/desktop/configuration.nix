@@ -14,7 +14,7 @@
     # ../../modules/system/software/rclone.nix
     ../../modules/system/software/steam.nix
     ../../modules/system/software/task-champion.nix
-    ../../modules/system/spell.nix
+    # ../../modules/system/spell.nix
     # ../../modules/system/touchpad.nix
     # ../../modules/system/virtualization.nix
     (import ../../modules/system/security/sshd.nix {

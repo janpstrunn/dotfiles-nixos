@@ -12,7 +12,7 @@
     # ../../modules/system/security/firejail.nix
     # ../../modules/system/security/openvpn.nix
     # ../../modules/system/security/openvpn.nix
-    ../../modules/system/spell.nix
+    # ../../modules/system/spell.nix
     # ../../modules/system/steam.nix
     # ../../modules/system/touchpad.nix
     # ../../modules/system/virtualization.nix

@@ -26,7 +26,6 @@
             options = ["NOPASSWD"];
           }
         ];
-        groups = ["wheel"];
       }
     ];
     extraConfig = with pkgs; ''

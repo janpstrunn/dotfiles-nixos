@@ -31,15 +31,6 @@
   # Flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  users.users.admin = {
-    isNormalUser = true;
-    description = "Admnistrator";
-    extraGroups = ["networkmanager" "wheel" "input" "dialout" "video" "render"];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      nmap
-    ];
-  };
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;

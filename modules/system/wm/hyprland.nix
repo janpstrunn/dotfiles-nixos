@@ -21,7 +21,6 @@
 
   environment.systemPackages = with pkgs; [
     # Hyprland Essentials
-    cliphist
     cpio
     dunst
     gsettings-desktop-schemas
@@ -47,6 +46,7 @@
     hyprpolkitagent
     hyprsunset
     # Extra Tools
+    cliphist
     fuzzel
     grim
     rofi-wayland
