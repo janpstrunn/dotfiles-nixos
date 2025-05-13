@@ -19,6 +19,7 @@
     fzf
     gh
     git
+    git-crypt
     gitleaks
     gnutar
     gocryptfs
