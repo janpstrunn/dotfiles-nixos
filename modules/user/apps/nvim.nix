@@ -18,7 +18,6 @@
       # markdown-oxide
       # marksman
       neovide
-      python311Packages.python-lsp-server
       # sqls
       # typescript-language-server
       # yaml-language-server

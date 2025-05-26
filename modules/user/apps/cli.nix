@@ -49,6 +49,7 @@
     pwgen
     ranger
     ripgrep
+    rmlint
     rsync
     srm
     stow
