@@ -1,5 +1,6 @@
 alias fs := f-switch
 alias hs := hm-switch
+alias u := f-update
 
 # Default Just
 list:
@@ -47,5 +48,6 @@ hm-install:
 nextdns-harden:
   git update-index --assume-unchanged ./modules/system/nextdns-profile.nix
 
+# Imperatively add flathub to flatpak repos
 flatpak:
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
