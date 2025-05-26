@@ -3,14 +3,9 @@
     noto-fonts
     noto-fonts-emoji
     fira-code
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "Ubuntu"
-        "FiraCode"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.ubuntu
   ];
-
   fonts.fontDir.enable = true;
 }
