@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # freetube
-    gimp
+    gimp3
     # mermaid-cli
     mpv
     # obs-studio
