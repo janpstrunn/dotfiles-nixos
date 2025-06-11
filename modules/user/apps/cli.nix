@@ -61,6 +61,7 @@
     ueberzugpp
     unzip
     wget
+    yazi
     ydotool
     yt-dlp
     zip
