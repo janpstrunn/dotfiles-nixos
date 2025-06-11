@@ -1,11 +1,12 @@
 {
-  userSettings,
+  lib,
   pkgs,
+  userSettings,
   ...
 }: {
   # Doas instead of sudo
   security.doas.enable = true;
-  security.sudo.enable = false;
+  security.sudo.enable = lib.mkForce false;
   security.doas.extraRules = [
     {
       users = ["${userSettings.username}"];
