@@ -14,7 +14,7 @@
     }
     {
       users = ["${userSettings.username}"];
-      cmd = "tee";
+      cmd = "tomb";
       noPass = true;
     }
   ];

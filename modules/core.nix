@@ -19,7 +19,7 @@
     # ./system/opengl.nix
     ./system/podman.nix
     ./system/security/automount.nix
-    # ./system/security/doas.nix
+    ./system/security/doas.nix
     ./system/security/firewall.nix
     ./system/security/gpg.nix
     ./system/security/sudo.nix
