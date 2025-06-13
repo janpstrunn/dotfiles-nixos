@@ -20,6 +20,7 @@
     ../../modules/user/apps/media.nix
     ../../modules/user/apps/office.nix
     ../../modules/user/apps/password-manager.nix
+    ../../modules/user/apps/task.nix
     ../../modules/user/apps/terminal.nix
   ];
 }
