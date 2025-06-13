@@ -3,7 +3,7 @@
     ../../modules/core.nix
     # ../../modules/system/bluetooth.nix
     # ../../modules/system/docker.nix
-    ../../modules/system/gamemode.nix
+    # ../../modules/system/gamemode.nix
     # ../../modules/system/power.nix
     # ../../modules/system/printer.nix
     # ../../modules/system/proxy.nix
@@ -12,8 +12,8 @@
     # ../../modules/system/security/openvpn.nix
     # ../../modules/system/security/openvpn.nix
     # ../../modules/system/software/rclone.nix
-    ../../modules/system/software/steam.nix
-    ../../modules/system/software/task-champion.nix
+    # ../../modules/system/software/steam.nix
+    # ../../modules/system/software/task-champion.nix
     # ../../modules/system/spell.nix
     # ../../modules/system/touchpad.nix
     # ../../modules/system/virtualization.nix
