@@ -31,7 +31,7 @@
       username = "janpstrunn";
       name = "Janpstrunn";
       email = "janpstrunn@disroot.org";
-      profile = "desktop"; # laptop
+      profile = "desktop"; # desktop,laptop
       homeDir = "/home/${userSettings.username}";
       editor = "neovide";
       themeName = "rose-pine";
@@ -39,7 +39,7 @@
       iconTheme = pkgs.rose-pine-icon-theme;
       gtkTheme = pkgs.rose-pine-gtk-theme;
       displayManager = "ly"; # any
-      wm = "hyprland"; # hyprland, gnome, plasma
+      wm = "hyprland"; # hyprland,gnome,plasma
       term = "alacritty"; # any
     };
     lib = nixpkgs.lib;
