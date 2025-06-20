@@ -2,6 +2,8 @@
   description = "NixOS";
 
   inputs = {
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Declare flatpaks
@@ -13,34 +15,35 @@
     home-manager,
     nix-flatpak,
     nixpkgs,
+    disko,
     # nixpkgs-unstable,
     ...
   }: let
     # ----- SYSTEM SETTINGS ----- #
     systemSettings = {
-      hostname = "beelzebub";
-      timezone = "America/Sao_Paulo";
-      locale = "en_US.UTF-8";
-      extra_locale = "pt_BR.UTF-8"; # ${systemSettings.locale} # if single locale
-      keyboard = "us";
-      cups = "false"; # Use Cups
+      hostname = "beelzebub"; # desktop,nixos,home
+      timezone = "America/Sao_Paulo"; # America/Sao_Paulo,Asia/Tokyo,America/Chicago
+      locale = "en_US.UTF-8"; #en_US.UTF-8
+      extra_locale = "pt_BR.UTF-8"; # en_US.UTF-8
+      keyboard = "us"; # us,es
+      cups = "false"; # true,false
     };
     # ----- USER SETTINGS ----- #
     # This user is in wheel group
     userSettings = {
-      username = "janpstrunn";
-      name = "Janpstrunn";
-      email = "janpstrunn@disroot.org";
+      username = "janpstrunn"; # janpstrunn,admin,user
+      name = "Janpstrunn"; # Janpstrunn,Admin,User
+      email = "janpstrunn@disroot.org"; # john@doe.com
       profile = "desktop"; # desktop,laptop
       homeDir = "/home/${userSettings.username}";
-      editor = "neovide";
+      editor = "neovide"; # emacs,neovide
       themeName = "rose-pine";
       iconName = "oomox-rose-pine";
       iconTheme = pkgs.rose-pine-icon-theme;
       gtkTheme = pkgs.rose-pine-gtk-theme;
-      displayManager = "ly"; # any
+      displayManager = "ly"; # ly,sddm
       wm = "hyprland"; # hyprland,gnome,plasma
-      term = "alacritty"; # any
+      term = "alacritty"; # alacritty,ghostty,foot
     };
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
@@ -53,6 +56,11 @@
         modules = [
           (./. + "/profiles/" + ("/" + userSettings.profile) + "/configuration.nix")
           nix-flatpak.nixosModules.nix-flatpak
+          disko.nixosModules.disko
+          ./profiles/disks/ext4-luks.nix
+          {
+            _module.args.disks = ["/dev/sda"];
+          }
         ];
         specialArgs = {
           # inherit pkgs-unstable;
