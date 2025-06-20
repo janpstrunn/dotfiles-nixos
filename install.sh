@@ -9,29 +9,16 @@ NixOS Installer
 Usage:
   install.sh FLAG <FLAG_INPUT> COMMAND INPUT
   install.sh -h | install.sh help
+  install.sh
 
 Commands:
 help                        Displays this message and exits
 
 Flags:
+-d                          Skip some installation steps (Use default config values)
 -h                          Displays this message and exits
 EOF
 }
-
-while getopts ":h" opt; do
-  case "$opt" in
-  h)
-    help
-    exit 0
-    ;;
-  ?)
-    echo "Error: Invalid option '-$OPTARG'" >&2
-    exit 1
-    ;;
-  esac
-done
-
-shift $((OPTIND - 1))
 
 function replace_config() {
   local file="$1"
