@@ -198,6 +198,9 @@ help)
   help
   exit 0
   ;;
+clone)
+  git clone https://github.com/janpstrunn/nix $HOME/nix && main
+  ;;
 *)
   main
   ;;
