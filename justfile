@@ -52,6 +52,6 @@ nextdns-harden:
 flatpak:
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Format and Mount a BTRFS + Luks Partition
+# Format and Mount a EXT4 + Luks Partition
 disko-install:
-  sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ~/nix/profiles/disks/one-device-btrfs-luks.nix
+  sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ~/nix/profiles/disks/ext4-luks.nix
