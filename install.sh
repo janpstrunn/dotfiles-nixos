@@ -103,10 +103,6 @@ EOF
 
 function setup_disk() {
   local disk_options=($HOME/nix/profiles/disks/*.nix)
-  if [ ${#options[@]} -eq 0 ]; then
-    echo "No .nix files found in $HOME/nix/profiles/disks/"
-    exit 1
-  fi
   echo "Select a disk layout:"
   select disk_layout_option in "${disk_options[@]}"; do
     if [ -n "$disk_layout_option" ]; then
@@ -116,8 +112,8 @@ function setup_disk() {
     fi
   done
 
-  local original_line="./profiles/disks/ext4-luks.nix"
-  local new_line="./profiles/disks/$disk_layout_option"
+  local original_line="disks/ext4-luks.nix"
+  local new_line="disks/$disk_layout_option"
 
   sed -i "s|${original_line}|${new_line}|" "flake.nix"
 
@@ -141,34 +137,31 @@ function main() {
     replace_config "flake.nix" "username" 0
     replace_config "flake.nix" "name" 0
     replace_config "flake.nix" "email" 0
-    replace_config "flake.nix" "profile" 1
     replace_config "flake.nix" "editor" 0
     replace_config "flake.nix" "displayManager" 0
     replace_config "flake.nix" "wm" 0
     replace_config "flake.nix" "term" 0
   fi
-  echo "Step 3 - Enabling modules"
+  echo "Step 3 - Selecting a profile"
+  replace_config "flake.nix" "profile" 1
+  echo "Step 4 - Enabling modules"
   echo "You'll now select what modules you want to enable in the home.nix and configuration.nix"
   echo "You may want to read each modules content in order to enable it or not"
   echo "Once you are done, just save the file"
   read -p "Enter anything to continue" proceed
   unset proceed
-  default=$(awk -F' = |"' "/profile/ {print \$3}" "$file")
+  default=$(awk -F' = |"' "/profile/ {print \$3}" "flake.nix" | head -n 1)
   vim "$HOME/nix/profiles/$default/home.nix"
   vim "$HOME/nix/profiles/$default/configuration.nix"
-  if [ "$USE_DEFAULT" -eq 1 ]; then
-    echo "Step 4 - Selecting Disk Layout - Skipped"
-  else
-    echo "Step 4 - Selecting Disk Layout"
-    setup_disk
-  fi
-  echo "Step 5 - Applying Disk Layout"
+  echo "Step 5 - Selecting Disk Layout"
+  setup_disk
+  echo "Step 6 - Applying Disk Layout"
   sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount "$HOME/nix/profiles/disks/$disk_layout_option"
-  echo "Step 6 - Updating Hardware Configuration"
-  nixos-generate-config --no-filesystems --root /mnt
-  mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default"
-  echo "Step 7 - Installing NixOS"
-  nixos-install
+  echo "Step 7 - Updating Hardware Configuration"
+  sudo nixos-generate-config --no-filesystems --root /mnt
+  sudo mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default/"
+  echo "Step 8 - Installing NixOS"
+  sudo nixos-rebuild switch --flake .#janpstrunn && echo "Installation complete!"
   read -p "Do you want to reboot now? (Y/n)" reboot_now
   if [ "$reboot_now" == "Y" ] || [ "$reboot_now" == "y" ]; then
     reboot
