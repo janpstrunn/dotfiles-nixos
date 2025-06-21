@@ -66,6 +66,15 @@ function replace_config() {
   echo "✅ Updated $replacing to \"$option\" in $file"
 }
 
+function bye() {
+  cat <<EOF
+Once you reboot you system, you will still need to install Home Manager and run it to install user-side software
+You may run just in this repository with the following recipes:
+- just hm-install # To install Home Manager
+- just hm-switch # To run it
+EOF
+}
+
 function welcome() {
   local choice
   cat <<EOF
@@ -162,6 +171,7 @@ function main() {
   sudo mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default/"
   echo "Step 8 - Installing NixOS"
   sudo nixos-rebuild switch --flake .#janpstrunn && echo "Installation complete!"
+  bye
   read -p "Do you want to reboot now? (Y/n)" reboot_now
   if [ "$reboot_now" == "Y" ] || [ "$reboot_now" == "y" ]; then
     reboot
