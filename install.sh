@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 function help() {
   cat <<EOF
 NixOS Installer
@@ -24,6 +22,7 @@ function replace_config() {
   local file="$1"
   local replacing="$2"
   local interactive="$3"
+  local default
 
   if [ ! -f "$file" ] || [ ! -r "$file" ]; then
     echo "Error: File $file does not exist or is not readable." >&2
@@ -52,7 +51,7 @@ function replace_config() {
     read -r option
     if [ -z "$option" ]; then
       echo "Skipped $replacing"
-      default=$(awk -F' = |"' "/$replacing/ {print \$3}" "$file")
+      default=$(awk -F' = |"' "/$replacing/ {print \$3}" "$file" | head -n 1)
       echo "Default value is: $default"
       echo
       return
@@ -121,6 +120,8 @@ function setup_disk() {
     fi
   done
 
+  disk_layout_option=$(basename $disk_layout_option)
+
   local original_line="disks/ext4-luks.nix"
   local new_line="disks/$disk_layout_option"
 
@@ -130,19 +131,18 @@ function setup_disk() {
 }
 
 function main() {
-  welcome
-  if [ "$USE_DEFAULT" -eq 1 ]; then
-    echo "Step 1 - Setting up System Settings - Skipped"
-    echo "Step 2 - Setting up User Settings - Skipped"
-  else
-    echo "Step 1 - Setting up System Settings:"
+  if [ "$USE_DEFAULT" -ne 1 ]; then
+    welcome
+  fi
+  if [ "$USE_DEFAULT" -ne 1 ]; then
+    echo -e "\nStep 1 - Setting up System Settings:\n"
     replace_config "flake.nix" "hostname" 0
     replace_config "flake.nix" "timezone" 0
     replace_config "flake.nix" "locale" 0
     replace_config "flake.nix" "extra_locale" 0
     replace_config "flake.nix" "keyboard" 0
     replace_config "flake.nix" "cups" 1
-    echo "Step 2 - Setting up User Settings:"
+    echo -e "\nStep 2 - Setting up User Settings:\n"
     replace_config "flake.nix" "username" 0
     replace_config "flake.nix" "name" 0
     replace_config "flake.nix" "email" 0
@@ -151,28 +151,39 @@ function main() {
     replace_config "flake.nix" "wm" 0
     replace_config "flake.nix" "term" 0
   fi
-  echo "Step 3 - Selecting a profile"
+  echo -e "\nStep 3 - Selecting a profile\n"
   replace_config "flake.nix" "profile" 1
-  echo "Step 4 - Enabling modules"
-  echo "You'll now select what modules you want to enable in the home.nix and configuration.nix"
-  echo "You may want to read each modules content in order to enable it or not"
-  echo "Once you are done, just save the file"
-  read -p "Enter anything to continue" proceed
-  unset proceed
-  default=$(awk -F' = |"' "/profile/ {print \$3}" "flake.nix" | head -n 1)
-  vim "$HOME/nix/profiles/$default/home.nix"
-  vim "$HOME/nix/profiles/$default/configuration.nix"
-  echo "Step 5 - Selecting Disk Layout"
+  if [ "$USE_DEFAULT" -ne 1 ]; then
+    echo -e "\nStep 4 - Enabling modules\n"
+    echo "You'll now select what modules you want to enable in the home.nix and configuration.nix"
+    echo "You may want to read each modules content in order to enable it or not"
+    echo "Once you are done, just save the file"
+    read -p "Enter anything to continue" proceed
+    unset proceed
+    default_profile=$(awk -F' = |"' "/profile/ {print \$3}" "flake.nix" | head -n 1)
+    vim "$HOME/nix/profiles/$default_profile/home.nix"
+    vim "$HOME/nix/profiles/$default_profile/configuration.nix"
+  fi
+  echo -e "\nStep 5 - Selecting Disk Layout\n"
   setup_disk
-  echo "Step 6 - Applying Disk Layout"
+  echo -e "\nStep 6 - Applying Disk Layout\n"
   sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount "$HOME/nix/profiles/disks/$disk_layout_option"
-  echo "Step 7 - Updating Hardware Configuration"
+  echo -e "\nStep 7 - Updating Hardware Configuration\n"
   sudo nixos-generate-config --no-filesystems --root /mnt
   sudo mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default/"
-  echo "Step 8 - Installing NixOS"
-  sudo nixos-rebuild switch --flake .#janpstrunn && echo "Installation complete!"
-  bye
-  read -p "Do you want to reboot now? (Y/n)" reboot_now
+  echo -e "\nStep 8 - Installing NixOS\n"
+  if [ ! -d "/nix/.rw-store" ]; then
+    sudo mount -o remount,size=10G,noatime /nix/.rw-store
+    sudo mkdir /boot
+    sudo mount /dev/sda1 /boot/
+  fi
+  sudo nixos-install --flake .#janpstrunn || exit 1
+  if [ "$USE_DEFAULT" -ne 1 ]; then
+    bye
+  fi
+  default_user=$(awk -F' = |"' "/username/ {print \$3}" "flake.nix" | head -n 1)
+  sudo passwd $default_user
+  read -p "Do you want to reboot now? (Y/n) " reboot_now
   if [ "$reboot_now" == "Y" ] || [ "$reboot_now" == "y" ]; then
     reboot
   fi
