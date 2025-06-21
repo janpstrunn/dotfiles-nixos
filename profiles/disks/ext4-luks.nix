@@ -25,24 +25,17 @@
               content = {
                 type = "luks";
                 name = "cryptroot";
-                settings = {
-                  allow-discards = true;
-                };
+                extraOpenArgs = [
+                    "--allow-discards"
+                    "--perf-no_read_workqueue"
+                    "--perf-no_write_workqueue"
+                  ];
+                ]
                 content = {
-                  size = "100%";
-                  content = {
-                    type = "filesystem";
-                    format = "ext4";
-                    mountpoint = "/";
-                  };
+                  type = "filesystem";
+                  format = "ext4";
+                  mountpoint = "/";
                 };
-              };
-            };
-            encryptedSwap = {
-              size = "16GB";
-              content = {
-                type = "swap";
-                randomEncryption = true;
               };
             };
           };
