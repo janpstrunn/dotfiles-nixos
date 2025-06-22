@@ -15,7 +15,7 @@
 - <strong>Keep things simple</strong>
 - Keep it easy to maintain
 - Lightweight system without sacrificing on visuals
-    </details>
+  </details>
 
 <details>
   <summary>Goals</summary>
@@ -24,7 +24,7 @@
 - Keep the visuals consistent with an original theme (Elegant Vagrant)
 - Execute any task blazingly fast without any frictions to my workflow
 - Integrate CLI tools to produce results better than any GUI Tool
-    </details>
+  </details>
 
 <details>
   <summary>Notes</summary>
@@ -32,6 +32,33 @@
 I do not use Home Manager to manage all my dotfiles, instead I have a separate repository only for the software configurations. I do manage them using `stow` which is much simpler than Home Manager and give me more flexibility.
 
 This approach allows me to have agnostic configs, which can be used in any system, even if it does not run NixOS or Home Manager.
+
+  </details>
+
+<details>
+  <summary>Trying it out</summary>
+
+This repository include an installation script which helps you install this NixOS configuration. The script will handle everything (disk format, installation, apply dotfiles config and setup user password).
+
+To use the script you must be aware of two things:
+
+- This repository uses `disko` to manage partitions. I do recommend you to use your own `disko` configuration, or check the available ones in this repository at `./profiles/disks/` before proceeding!
+- Home Manager is configured separately from NixOS. This means you must run `home-manager switch --flake .` to apply the Home Manager configuration after installation.
+
+You can try this configuration in two ways:
+
+```bash
+git clone https://codeberg.org/janpstrunn/nix $HOME/nix
+sh $HOME/nix/install.sh
+```
+
+Or if you prefer a single command (WIP):
+
+```bash
+curl -sSL https://codeberg.org/janpstrunn/nix/raw/branch/main/install.sh clone | bash
+```
+
+<strong>Tip:</strong> If you want to try the config just like I use it, use the `-d` flag to use the default config.
 
   </details>
 
@@ -46,20 +73,21 @@ The theme can be found in the official theme repository: [janpstrunn/elegantvagr
 
 ## Tools
 
-| Tools   | Function             |
-| ------- | -------------------- |
-| Cmus    | Music Player         |
-| Dunst   | Notifications        |
-| Emacs   | Multi-purpose        |
-| Foot    | Terminal Emulator    |
-| MPV     | Media Player         |
-| Neovim  | Text Editor          |
-| Ranger  | File Management      |
-| Rofi    | Multi-purpose        |
-| Swayimg | Image Viewer         |
-| Tmux    | Terminal Multiplexer |
-| Waybar  | Status Bar           |
-| Zsh     | Shell                |
+| Tools         | Function             |
+| ------------- | -------------------- |
+| Cmus          | Music Player         |
+| Dunst         | Notifications        |
+| Emacs         | Multi-purpose        |
+| Alacritty     | Terminal Emulator    |
+| MPV           | Media Player         |
+| Neovim        | Text Editor          |
+| Neomutt       | Mail Client          |
+| Ranger + Yazi | File Management      |
+| Rofi          | Multi-purpose        |
+| Swayimg       | Image Viewer         |
+| Taskwarrior   | Task Management      |
+| Tmux          | Terminal Multiplexer |
+| Zsh           | Shell                |
 
 And many more...
 
