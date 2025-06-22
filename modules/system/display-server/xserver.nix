@@ -29,10 +29,11 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     adwaita-qt
+    dconf
     libnotify
+    networkmanagerapplet
     xclip
     xdotool
     zenity
-    dconf
   ];
 }
