@@ -44,26 +44,73 @@
 
   environment.systemPackages = with pkgs; [
     # All Users
+    age
+    atomicparsley
+    bash-completion
+    bat
+    borgbackup
+    brightnessctl
+    btop
+    cmus
     cryptsetup
     curl
+    direnv
+    # expect
+    eza
+    fastfetch
+    fd
+    ffmpeg
     fzf
+    gh
     git
+    git-crypt
+    gitleaks
     gnutar
+    gocryptfs
+    gvfs
+    home-manager
+    imagemagick
     jmtpfs
+    jq
     just
     killall
     lazygit
     less
+    libargon2
+    lsof
     man
     moreutils
+    mpv
+    mtpfs
+    mupdf
+    ncdu
+    oath-toolkit
+    # odt2txt
+    oh-my-posh
+    onefetch
     openssl
     polkit
     pulseaudio
+    pwgen
+    ranger
     ripgrep
+    rmlint
+    rsync
+    srm
+    stow
+    tldr
+    tmux
+    tmuxp
+    tree
     udiskie
+    ueberzugpp
     unzip
     wget
+    yazi
+    ydotool
+    yt-dlp
     zip
+    zoxide
     zsh
   ];
 
