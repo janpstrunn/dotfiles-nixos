@@ -134,6 +134,7 @@ function main() {
   if [ "$USE_DEFAULT" -ne 1 ]; then
     welcome
   fi
+
   if [ "$USE_DEFAULT" -ne 1 ]; then
     echo -e "\nStep 1 - Setting up System Settings:\n"
     replace_config "flake.nix" "hostname" 0
@@ -151,8 +152,10 @@ function main() {
     replace_config "flake.nix" "wm" 0
     replace_config "flake.nix" "term" 0
   fi
+
   echo -e "\nStep 3 - Selecting a profile\n"
   replace_config "flake.nix" "profile" 1
+
   if [ "$USE_DEFAULT" -ne 1 ]; then
     echo -e "\nStep 4 - Enabling modules\n"
     echo "You'll now select what modules you want to enable in the home.nix and configuration.nix"
@@ -164,25 +167,41 @@ function main() {
     vim "$HOME/nix/profiles/$default_profile/home.nix"
     vim "$HOME/nix/profiles/$default_profile/configuration.nix"
   fi
+
   echo -e "\nStep 5 - Selecting Disk Layout\n"
   setup_disk
+
   echo -e "\nStep 6 - Applying Disk Layout\n"
   sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount "$HOME/nix/profiles/disks/$disk_layout_option"
+
   echo -e "\nStep 7 - Updating Hardware Configuration\n"
   sudo nixos-generate-config --no-filesystems --root /mnt
-  sudo mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default/"
+  sudo mv -f "/mnt/etc/nixos/hardware-configuration.nix" "$HOME/nix/profiles/$default/hardware-configuration.nix"
+
   echo -e "\nStep 8 - Installing NixOS\n"
   if [ ! -d "/nix/.rw-store" ]; then
     sudo mount -o remount,size=10G,noatime /nix/.rw-store
-    sudo mkdir /boot
-    sudo mount /dev/sda1 /boot/
   fi
   sudo nixos-install --flake .#janpstrunn || exit 1
+
+  echo -e "\nStep 9 - Finishing installation\n"
+  default_user=$(awk -F' = |"' "/username/ {print \$3}" "flake.nix" | head -n 1)
+  nix_home=/mnt/home/$default_user/
+  sudo chroot /mnt /nix/var/nix/profiles/system/activate
+  echo "Define password for $default_user"
+  sudo chroot /mnt/ bash -c "passwd $default_user"
+
+  echo -e "\nStep 10 - Configuring dotfiles\n"
+
+  git clone https://codeberg.org/janpstrunn/dotfiles $HOME/dotfiles
+  sudo mv $HOME/dotfiles/ $nix_home
+  sudo cp -r $HOME/nix/ $nix_home
+  sudo chroot /mnt/ bash -c "cd /home/$default_user/dotfiles && just stow"
+
   if [ "$USE_DEFAULT" -ne 1 ]; then
     bye
   fi
-  default_user=$(awk -F' = |"' "/username/ {print \$3}" "flake.nix" | head -n 1)
-  sudo passwd $default_user
+
   read -p "Do you want to reboot now? (Y/n) " reboot_now
   if [ "$reboot_now" == "Y" ] || [ "$reboot_now" == "y" ]; then
     reboot
