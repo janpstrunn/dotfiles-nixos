@@ -21,6 +21,7 @@
 
   environment.systemPackages = with pkgs; [
     # Hyprland Essentials
+    alacritty
     cpio
     dunst
     gsettings-desktop-schemas
