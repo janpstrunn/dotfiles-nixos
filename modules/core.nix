@@ -48,6 +48,7 @@
     atomicparsley
     bash-completion
     bat
+    bc
     borgbackup
     brightnessctl
     btop
