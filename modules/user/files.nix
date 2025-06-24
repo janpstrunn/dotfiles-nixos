@@ -3,8 +3,9 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".tmuxprofile".text = ''
       $DEV
-      $DEV/github/
+      $DEV/codeberg/
       $DEV/forgejo/
+      $DEV/github/
     '';
     ".gnupg/gpg-agent.conf".text = ''
       # pinentry-program /usr/bin/pinentry-gnome3
