@@ -32,11 +32,10 @@
   };
 
   services.udiskie.enable = true;
-  services.udiskie.tray = "always";
+  services.udiskie.tray = "never";
 
   programs.home-manager.enable = true;
 
-  # TODO: Find an usage for this
   home.sessionVariables = {
     EDITOR = userSettings.editor;
     TERMCMD = userSettings.term;
@@ -65,7 +64,7 @@
       "x-scheme-handler/https" = "app.zen_browser.zen.desktop";
       "x-scheme-handler/about" = "app.zen_browser.zen.desktop";
       "x-scheme-handler/unknown" = "app.zen_browser.zen.desktop";
-      "inode/directory" = "ranger.desktop";
+      "inode/directory" = "yazi.desktop";
     };
   };
 
