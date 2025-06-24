@@ -36,30 +36,20 @@
     description = userSettings.name;
     extraGroups = ["networkmanager" "wheel" "input" "dialout" "video" "render"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      figlet
-    ];
+    # packages = with pkgs; [
+    #   figlet
+    # ];
     uid = 1000;
   };
 
   environment.systemPackages = with pkgs; [
     # All Users
     age
-    atomicparsley
     bash-completion
-    bat
-    bc
-    borgbackup
     brightnessctl
-    btop
-    cmus
     cryptsetup
     curl
     direnv
-    # expect
-    eza
-    fastfetch
-    fd
     ffmpeg
     fzf
     gh
@@ -77,42 +67,28 @@
     killall
     lazygit
     less
-    libargon2
     lsof
     man
     moreutils
-    mpv
     mtpfs
-    mupdf
-    ncdu
-    oath-toolkit
-    # odt2txt
     oh-my-posh
-    onefetch
     openssl
     polkit
     pulseaudio
     pwgen
-    ranger
     ripgrep
     rmlint
     rsync
     srm
     stow
     tldr
-    tmux
-    tmuxp
     tree
     udiskie
-    ueberzugpp
     unzip
     wget
-    yazi
     ydotool
-    yt-dlp
     zip
     zoxide
-    zsh
   ];
 
   environment.shells = with pkgs; [bash zsh];
