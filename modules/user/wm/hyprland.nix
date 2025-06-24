@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   # Hyprland Packages if used in non-NixOS system
   home.packages = with pkgs; [
-    # Essentials
-    cliphist
+    # Hyprland Essentials
     cpio
     dunst
     gsettings-desktop-schemas
@@ -28,6 +27,7 @@
     hyprpolkitagent
     hyprsunset
     # Extra Tools
+    cliphist
     fuzzel
     grim
     rofi-wayland
