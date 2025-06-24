@@ -3,5 +3,6 @@
     isync
     mutt-wizard
     neomutt
+    # thunderbird
   ];
 }

@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    restic
+    borgbackup
+    # megacmd
     rclone
+    restic
   ];
 }

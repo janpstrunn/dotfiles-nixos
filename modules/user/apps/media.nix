@@ -5,5 +5,6 @@
     # mermaid-cli
     mpv
     # obs-studio
+    # vlc
   ];
 }
