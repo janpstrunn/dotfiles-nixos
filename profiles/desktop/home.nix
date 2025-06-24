@@ -29,4 +29,19 @@
     # Window Manager
     # ../../modules/user/wm/hyprland.nix
   ];
+
+  home.file = {
+    ".config/waybar/config.jsonc" = {
+      text = ''
+        {
+          "include": [
+            "$HOME/.config/waybar/profiles/default-mechabar.jsonc",
+            "$HOME/.config/waybar/modules/nixos.jsonc",
+            "$HOME/.config/waybar/modules/desktop.jsonc",
+          ],
+        }
+      '';
+      force = true;
+    };
+  };
 }
