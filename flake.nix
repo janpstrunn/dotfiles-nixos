@@ -2,8 +2,8 @@
   description = "NixOS";
 
   inputs = {
-    disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest"; # Declare flatpaks
@@ -61,22 +61,21 @@
           {
             _module.args.disks = ["/dev/sda"];
           }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${userSettings.username} = import (./. + "/profiles/" + ("/" + userSettings.profile) + "/home.nix");
+            home-manager.extraSpecialArgs = {
+              # inherit pkgs-unstable;
+              inherit pkgs;
+              inherit system;
+              inherit systemSettings;
+              inherit userSettings;
+            };
+          }
         ];
         specialArgs = {
-          # inherit pkgs-unstable;
-          inherit system;
-          inherit systemSettings;
-          inherit userSettings;
-        };
-      };
-    };
-    homeConfigurations = {
-      janpstrunn = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          (./. + "/profiles/" + ("/" + userSettings.profile) + "/home.nix")
-        ];
-        extraSpecialArgs = {
           # inherit pkgs-unstable;
           inherit system;
           inherit systemSettings;
