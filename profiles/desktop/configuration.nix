@@ -12,8 +12,9 @@
     # ../../modules/system/security/openvpn.nix
     # ../../modules/system/security/openvpn.nix
     # ../../modules/system/software/rclone.nix
-    # ../../modules/system/software/steam.nix
     # ../../modules/system/software/task-champion.nix
+    ../../modules/system/software/unfree/obsidian.nix
+    # ../../modules/system/software/unfree/steam.nix
     # ../../modules/system/spell.nix
     # ../../modules/system/touchpad.nix
     # ../../modules/system/virtualization.nix
