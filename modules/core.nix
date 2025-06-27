@@ -24,6 +24,7 @@
     ./system/security/gpg.nix
     ./system/security/sudo.nix
     # ./system/security/unfree.nix
+    ./system/swap.nix
     ./system/systemd.nix
     # ./system/time.nix
   ];
