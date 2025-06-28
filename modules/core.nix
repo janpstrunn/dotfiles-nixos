@@ -80,6 +80,7 @@
     ripgrep
     rmlint
     rsync
+    sd
     srm
     stow
     tldr
