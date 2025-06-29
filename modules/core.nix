@@ -72,6 +72,7 @@
     man
     moreutils
     mtpfs
+    nmap
     oh-my-posh
     openssl
     polkit

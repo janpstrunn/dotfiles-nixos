@@ -40,6 +40,7 @@
     mtpfs
     mupdf
     ncdu
+    nmap
     oath-toolkit
     # odt2txt
     oh-my-posh
