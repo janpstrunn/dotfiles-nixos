@@ -15,8 +15,8 @@
       # java-language-server
       # kotlin-language-server
       lua-language-server
-      # markdown-oxide
-      # marksman
+      markdown-oxide
+      marksman
       neovide
       # sqls
       # typescript-language-server
