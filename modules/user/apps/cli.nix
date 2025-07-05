@@ -54,6 +54,7 @@
     rmlint
     rsync
     sd
+    sqlite
     srm
     stow
     tldr
